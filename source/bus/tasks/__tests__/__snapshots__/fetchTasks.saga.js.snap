@@ -5,10 +5,25 @@ Object {
   "@@redux-saga/IO": true,
   "PUT": Object {
     "action": Object {
-      "error": true,
-      "meta": "fetchTasks worker",
-      "payload": [TypeError: Cannot destructure property \`data\` of 'undefined' or 'null'.],
-      "type": "EMIT_ERROR",
+      "payload": Array [
+        Object {
+          "completed": true,
+          "created": "2019-09-23T09:46:22.407Z",
+          "favorite": false,
+          "id": "5d88946eb808f5f760f45111",
+          "message": "dry code",
+          "modified": "2019-09-24T19:03:50.634Z",
+        },
+        Object {
+          "completed": false,
+          "created": "2019-09-23T09:46:22.407Z",
+          "favorite": true,
+          "id": "5d88946eb808f5f760f45000",
+          "message": "clean code",
+          "modified": "2019-09-24T19:03:50.634Z",
+        },
+      ],
+      "type": "FILL_TASKS",
     },
     "channel": null,
   },

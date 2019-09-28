@@ -12,8 +12,6 @@ const fetchTasksAction = tasksActions.fetchTasksAsync();
 const saga = cloneableGenerator(fetchTasks)(fetchTasksAction);
 let clone = null;
 
-console.log('SAGA', saga);
-
 describe("fetchTasks saga:", () => {
     describe("should pass until response received", () => {
         test('should dispatch "startFetching" action', () => {
@@ -56,7 +54,7 @@ describe("fetchTasks saga:", () => {
         });
 
         test('should dispatch "fillTasks" action', () => {
-            expect(saga.next(__.responseDataUsersSuccess).value)
+            expect(saga.next(__.responseDataSuccess).value)
                 .toMatchSnapshot();
         });
 
