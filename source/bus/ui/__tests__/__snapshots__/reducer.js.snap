@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ui reducer: should handle a START_FETCHING action 1`] = `
+Immutable.Map {
+  "isTasksFetching": true,
+}
+`;
+
+exports[`ui reducer: should handle a STOP_FETCHING action 1`] = `
+Immutable.Map {
+  "isTasksFetching": false,
+}
+`;
+
+exports[`ui reducer: should return initial state by default 1`] = `
+Immutable.Map {
+  "isTasksFetching": false,
+}
+`;

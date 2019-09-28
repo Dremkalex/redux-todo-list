@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ui actions emit error 1`] = `
+Object {
+  "error": true,
+  "meta": null,
+  "payload": [Error: TEST_ERROR_MESSAGE.],
+  "type": "EMIT_ERROR",
+}
+`;
+
+exports[`ui actions start fetching 1`] = `
+Object {
+  "type": "START_FETCHING",
+}
+`;
+
+exports[`ui actions stop fetching 1`] = `
+Object {
+  "type": "STOP_FETCHING",
+}
+`;

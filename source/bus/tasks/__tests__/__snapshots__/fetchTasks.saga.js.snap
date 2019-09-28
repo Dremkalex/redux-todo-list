@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchTasks saga: should handle a 200 status response should dispatch "fillTasks" action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "error": true,
+      "meta": "fetchTasks worker",
+      "payload": [TypeError: Cannot destructure property \`data\` of 'undefined' or 'null'.],
+      "type": "EMIT_ERROR",
+    },
+    "channel": null,
+  },
+}
+`;
+
+exports[`fetchTasks saga: should handle a 200 status response should dispatch "stopFetching" action 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "type": "STOP_FETCHING",
+    },
+    "channel": null,
+  },
+}
+`;
