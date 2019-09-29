@@ -46,6 +46,11 @@ const task = {
     modified:  "2019-09-24T19:03:50.634Z",
 };
 
+const responseDataUpdatedTaskSuccess = {
+    data:    [task],
+    message: successMesasge,
+};
+
 const responseDataTaskSuccess = {
     data:    task,
     message: successMesasge,
@@ -58,6 +63,11 @@ const responseDataSuccess = {
 
 const responseDataFail = {
     message: errorMessage,
+};
+
+const fetchResponseUpdatedTaskSuccess = {
+    status: 200,
+    json:   jest.fn(() => Promise.resolve(responseDataUpdatedTaskSuccess)),
 };
 
 const fetchResponseTaskSuccess = {
@@ -83,11 +93,14 @@ global.__ = {
     tasks,
     task,
     error,
-    responseDataFail,
-    responseDataTaskSuccess,
+    errorMessage,
     responseDataSuccess,
-    fetchResponseTaskSuccess,
+    responseDataTaskSuccess,
+    responseDataUpdatedTaskSuccess,
+    responseDataFail,
     fetchResponseSuccess,
+    fetchResponseTaskSuccess,
+    fetchResponseUpdatedTaskSuccess,
     fetchResponseSuccess204,
     fetchResponseFail400,
 };

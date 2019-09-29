@@ -10,30 +10,27 @@ import { uiActions } from '../../ui/actions';
 import { tasksActions } from '../../tasks/actions';
 
 // Saga
-import { updateTask } from '../saga/workers';
+import { completeAllTasks } from '../saga/workers';
 
-describe('updateTask saga:', () => {
+describe('completeAllTasks saga:', () => {
     test('should complete a 200 status response scenario', async () => {
-        await expectSaga(updateTask, { payload: __.task })
+        await expectSaga(completeAllTasks, { payload: __.tasks })
             .put(uiActions.startFetching())
             .provide([
-                [apply(api, api.tasks.update, [__.task]), __.fetchResponseUpdatedTaskSuccess]
+                [apply(api, api.tasks.completeAllTasks, [__.tasks]), __.fetchResponseSuccess]
             ])
-            .apply(__.fetchResponseUpdatedTaskSuccess, __.fetchResponseUpdatedTaskSuccess.json)
-            .put(tasksActions.updateTask(__.task))
-            .put(tasksActions.resetEditTaskId())
+            .put(tasksActions.fillTasks(__.tasks))
             .put(uiActions.stopFetching())
             .run();
     });
 
     test('should complete a 400 status response scenario', async () => {
-        await expectSaga(updateTask, { payload: __.task })
+        await expectSaga(completeAllTasks, { payload: __.tasks })
             .put(uiActions.startFetching())
             .provide([
-                [apply(api, api.tasks.update, [__.task]), __.fetchResponseFail400]
+                [apply(api, api.tasks.completeAllTasks, [__.tasks]), __.fetchResponseFail400]
             ])
-            .apply(__.fetchResponseFail400, __.fetchResponseFail400.json)
-            .put(uiActions.emitError(__.error, 'updateTask worker'))
+            .put(uiActions.emitError(__.error, 'completeAllTasks worker'))
             .put(uiActions.stopFetching())
             .run();
     });
